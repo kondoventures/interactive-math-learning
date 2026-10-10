@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Learn math by playing with it. Interactive animations for trigonometry, geometry and algebra." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>MathPlay — Learn Math by Playing</title>
+  </head>
+  <body>
+    <header class="nav">
+      <a class="brand" href="#top"><span class="brand-mark">∑</span> MathPlay</a>
+      <nav>
+        <a href="#unit-circle">Unit Circle</a>
+        <a href="#pythagoras">Pythagoras</a>
+        <a href="#parabola">Parabolas</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">Interactive math lab</p>
+        <h1>Don't memorize math.<br /><span class="hl">Play with it.</span></h1>
+        <p class="lead">
+          Drag, slide and watch. Each animation below turns one big idea into something you can touch.
+          Change a value and see the math respond in real time.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#unit-circle">Start exploring</a>
+          <a class="btn btn-ghost" href="#how">How it works</a>
+        </div>
+        <ul class="topic-chips">
+          <li>Trigonometry</li>
+          <li>Geometry</li>
+          <li>Algebra</li>
+        </ul>
+      </section>
+
+      <section id="how" class="how">
+        <div class="step"><span>1</span><h3>Play</h3><p>Drag points and move sliders. Nothing breaks.</p></div>
+        <div class="step"><span>2</span><h3>Notice</h3><p>Watch the numbers and shapes change together.</p></div>
+        <div class="step"><span>3</span><h3>Explain</h3><p>Answer the challenge to lock in the idea.</p></div>
+      </section>
+
+      <!-- Demo 1 -->
+      <section id="unit-circle" class="demo">
+        <div class="demo-text">
+          <p class="eyebrow">01 · Trigonometry</p>
+          <h2>The Unit Circle &amp; Sine Waves</h2>
+          <p>
+            A point moves around a circle with radius 1. Its <b class="y">height</b> is
+            <code>sin θ</code> and its <b class="c">horizontal position</b> is <code>cos θ</code>.
+            Trace the height over time and you get a sine wave.
+          </p>
+          <div class="controls">
+            <button class="btn btn-primary" id="uc-play">Pause</button>
+            <label>Speed <input type="range" id="uc-speed" min="0.1" max="3" step="0.1" value="1" /></label>
+            <label>Angle θ <input type="range" id="uc-angle" min="0" max="360" step="1" value="0" /></label>
+          </div>
+          <div class="readout" id="uc-readout"></div>
+          <div class="challenge">
+            <b>Challenge:</b> At which two angles is <code>sin θ = cos θ</code>? Pause and drag to find them.
+          </div>
+        </div>
+        <div class="demo-canvas"><canvas id="uc-canvas" aria-label="Unit circle animation"></canvas></div>
+      </section>
+
+      <!-- Demo 2 -->
+      <section id="pythagoras" class="demo reverse">
+        <div class="demo-text">
+          <p class="eyebrow">02 · Geometry</p>
+          <h2>Pythagorean Theorem</h2>
+          <p>
+            In a right triangle, the square on the longest side equals the sum of the squares on the
+            other two sides: <code>a² + b² = c²</code>. <b class="y">Drag the yellow corners</b> to
+            reshape the triangle and watch the areas.
+          </p>
+          <div class="controls">
+            <button class="btn btn-primary" id="py-animate">Animate proof</button>
+            <button class="btn btn-ghost" id="py-reset">Reset to 3-4-5</button>
+          </div>
+          <div class="readout" id="py-readout"></div>
+          <div class="challenge">
+            <b>Challenge:</b> Find another triangle with whole-number sides. (Hint: try a = 6.)
+          </div>
+        </div>
+        <div class="demo-canvas"><canvas id="py-canvas" aria-label="Pythagorean theorem interactive"></canvas></div>
+      </section>
+
+      <!-- Demo 3 -->
+      <section id="parabola" class="demo">
+        <div class="demo-text">
+          <p class="eyebrow">03 · Algebra</p>
+          <h2>Parabola Explorer</h2>
+          <p>
+            Every quadratic <code>y = ax² + bx + c</code> draws a parabola. Move the sliders to see
+            how each number changes the shape, the <b class="y">vertex</b>, and the
+            <b class="c">roots</b> (where the curve meets the x-axis).
+          </p>
+          <div class="controls sliders">
+            <label>a <input type="range" id="pa-a" min="-3" max="3" step="0.1" value="1" /><output id="pa-a-v"></output></label>
+            <label>b <input type="range" id="pa-b" min="-6" max="6" step="0.1" value="0" /><output id="pa-b-v"></output></label>
+            <label>c <input type="range" id="pa-c" min="-6" max="6" step="0.1" value="-2" /><output id="pa-c-v"></output></label>
+            <button class="btn btn-ghost" id="pa-wiggle">Animate c</button>
+          </div>
+          <div class="readout" id="pa-readout"></div>
+          <div class="challenge">
+            <b>Challenge:</b> Make a parabola that touches the x-axis at exactly one point.
+            What is <code>b² − 4ac</code> then?
+          </div>
+        </div>
+        <div class="demo-canvas"><canvas id="pa-canvas" aria-label="Parabola graph"></canvas></div>
+      </section>
+
+      <section class="cta">
+        <h2>Math is a playground.</h2>
+        <p>More topics coming soon: fractions, probability, derivatives and vectors.</p>
+        <a class="btn btn-primary" href="#top">Back to top</a>
+      </section>
+    </main>
+
+    <footer class="footer">Built with Vite · MathPlay</footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
